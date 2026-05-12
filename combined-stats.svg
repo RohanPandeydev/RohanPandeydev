@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="460" viewBox="0 0 520 460" fill="none" role="img">
+  <title>Combined GitHub Stats — RohanPandeydev + rohanpandey-gss</title>
+  <style>
+    .bg { fill: #1a1b27; }
+    .border { stroke: #2d2f3a; stroke-width: 1; fill: none; }
+    .title { fill: #70a5fd; font: 600 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .subtitle { fill: #a9b1d6; font: 400 12px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .label { fill: #c5cbe3; font: 500 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .value { fill: #bf91f3; font: 600 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .divider { stroke: #2d2f3a; stroke-width: 0.5; }
+    .footer { fill: #6b7392; font: 400 10px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  </style>
+  <rect class="bg" x="0.5" y="0.5" width="519" height="459" rx="10"/>
+  <rect class="border" x="0.5" y="0.5" width="519" height="459" rx="10"/>
+  <text x="30" y="42" class="title">Combined GitHub Stats</text>
+  <text x="30" y="62" class="subtitle">@RohanPandeydev + @rohanpandey-gss · same dev</text>
+  
+    <g transform="translate(0,98)">
+      <text x="30" y="16" class="label">Total Commits (this year)</text>
+      <text x="490" y="16" class="value" text-anchor="end">951</text>
+      <line x1="30" y1="26" x2="490" y2="26" class="divider"/>
+    </g>
+    <g transform="translate(0,130)">
+      <text x="30" y="16" class="label">Private Contributions</text>
+      <text x="490" y="16" class="value" text-anchor="end">9</text>
+      <line x1="30" y1="26" x2="490" y2="26" class="divider"/>
+    </g>
+    <g transform="translate(0,162)">
+      <text x="30" y="16" class="label">Total PRs</text>
+      <text x="490" y="16" class="value" text-anchor="end">395</text>
+      <line x1="30" y1="26" x2="490" y2="26" class="divider"/>
+    </g>
+    <g transform="translate(0,194)">
+      <text x="30" y="16" class="label">Merged PRs</text>
+      <text x="490" y="16" class="value" text-anchor="end">390</text>
+      <line x1="30" y1="26" x2="490" y2="26" class="divider"/>
+    </g>
+    <g transform="translate(0,226)">
+      <text x="30" y="16" class="label">Issues Opened</text>
+      <text x="490" y="16" class="value" text-anchor="end">1</text>
+      <line x1="30" y1="26" x2="490" y2="26" class="divider"/>
+    </g>
+    <g transform="translate(0,258)">
+      <text x="30" y="16" class="label">PR Reviews</text>
+      <text x="490" y="16" class="value" text-anchor="end">155</text>
+      <line x1="30" y1="26" x2="490" y2="26" class="divider"/>
+    </g>
+    <g transform="translate(0,290)">
+      <text x="30" y="16" class="label">Repos Contributed To</text>
+      <text x="490" y="16" class="value" text-anchor="end">15</text>
+      <line x1="30" y1="26" x2="490" y2="26" class="divider"/>
+    </g>
+    <g transform="translate(0,322)">
+      <text x="30" y="16" class="label">Repos Owned</text>
+      <text x="490" y="16" class="value" text-anchor="end">42</text>
+      <line x1="30" y1="26" x2="490" y2="26" class="divider"/>
+    </g>
+    <g transform="translate(0,354)">
+      <text x="30" y="16" class="label">Total Stars Earned</text>
+      <text x="490" y="16" class="value" text-anchor="end">0</text>
+      <line x1="30" y1="26" x2="490" y2="26" class="divider"/>
+    </g>
+    <g transform="translate(0,386)">
+      <text x="30" y="16" class="label">Followers</text>
+      <text x="490" y="16" class="value" text-anchor="end">1</text>
+      <line x1="30" y1="26" x2="490" y2="26" class="divider"/>
+    </g>
+  <text x="30" y="442" class="footer">Updated Tue, 12 May 2026 18:35:40 GMT</text>
+</svg>
