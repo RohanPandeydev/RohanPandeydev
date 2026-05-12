@@ -18,7 +18,7 @@
 🌱 Currently exploring **Three.js, React Three Fiber, and creative web development**
 🎨 Love crafting interactive UIs and 3D portfolio experiences
 💡 Open to collaboration on innovative JavaScript projects
-🏢 Work account: [@rohanpandey-gss](https://github.com/rohanpandey-gss) (Grass Stone)
+🏢 Active across [@RohanPandeydev](https://github.com/RohanPandeydev) (personal) and [@rohanpandey-gss](https://github.com/rohanpandey-gss) (work at Grass Stone) — same dev, two accounts
 📫 Reach me: **rohan.kr.pandey2.0@gmail.com**
 
 ---
@@ -59,27 +59,13 @@
 
 ---
 
-## 📊 GitHub Statistics (private contributions included)
-
-### Personal — [@RohanPandeydev](https://github.com/RohanPandeydev)
+## 📊 GitHub Statistics
 
 <div align="center">
 
-![Personal Metrics](./metrics-personal.svg)
+![Metrics](./metrics-personal.svg)
 
-</div>
-
-### Work — [@rohanpandey-gss](https://github.com/rohanpandey-gss)
-
-<div align="center">
-
-![Work Metrics](./metrics-work.svg)
-
-</div>
-
-### Quick Stats Cards
-
-<div align="center">
+![Metrics](./metrics-work.svg)
 
 <a href="https://github-readme-stats.vercel.app/api?username=RohanPandeydev&show_icons=true&theme=tokyonight&hide_border=true&count_private=true">
   <img src="https://github-readme-stats.vercel.app/api?username=RohanPandeydev&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" />
@@ -109,19 +95,11 @@
 
 ## 🐍 Contribution Snake
 
-### Personal — [@RohanPandeydev](https://github.com/RohanPandeydev)
-
 <div align="center">
 
-![Snake animation - Personal](https://raw.githubusercontent.com/RohanPandeydev/RohanPandeydev/output/snake-personal-dark.svg)
+![Snake animation](https://raw.githubusercontent.com/RohanPandeydev/RohanPandeydev/output/snake-personal-dark.svg)
 
-</div>
-
-### Work — [@rohanpandey-gss](https://github.com/rohanpandey-gss)
-
-<div align="center">
-
-![Snake animation - Work](https://raw.githubusercontent.com/RohanPandeydev/RohanPandeydev/output/snake-work-dark.svg)
+![Snake animation](https://raw.githubusercontent.com/RohanPandeydev/RohanPandeydev/output/snake-work-dark.svg)
 
 </div>
 
