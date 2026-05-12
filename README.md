@@ -63,21 +63,7 @@
 
 <div align="center">
 
-![Metrics](./metrics-personal.svg)
-
-![Metrics](./metrics-work.svg)
-
-<a href="https://github-readme-stats.vercel.app/api?username=RohanPandeydev&show_icons=true&theme=tokyonight&hide_border=true&count_private=true">
-  <img src="https://github-readme-stats.vercel.app/api?username=RohanPandeydev&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" />
-</a>
-
-<a href="https://github-readme-stats.vercel.app/api/top-langs?username=RohanPandeydev&show_icons=true&theme=tokyonight&layout=compact&hide_border=true&langs_count=8">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=RohanPandeydev&show_icons=true&theme=tokyonight&layout=compact&hide_border=true&langs_count=8" alt="Top Languages" />
-</a>
-
-<a href="https://github-readme-streak-stats.herokuapp.com?user=RohanPandeydev&theme=tokyonight&hide_border=true">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=RohanPandeydev&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
-</a>
+![Combined GitHub Stats](./combined-stats.svg)
 
 </div>
 
@@ -98,8 +84,6 @@
 <div align="center">
 
 ![Snake animation](https://raw.githubusercontent.com/RohanPandeydev/RohanPandeydev/output/snake-personal-dark.svg)
-
-![Snake animation](https://raw.githubusercontent.com/RohanPandeydev/RohanPandeydev/output/snake-work-dark.svg)
 
 </div>
 

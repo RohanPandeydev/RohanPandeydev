@@ -1,0 +1,39 @@
+name: Combined Stats
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/combined-stats.mjs"
+      - ".github/workflows/combined.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate combined SVG
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+          METRICS_TOKEN_WORK: ${{ secrets.METRICS_TOKEN_WORK }}
+        run: node scripts/combined-stats.mjs
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add combined-stats.svg
+          git diff --cached --quiet && exit 0
+          git commit -m "Update combined-stats.svg - [Skip GitHub Action]"
+          git push
