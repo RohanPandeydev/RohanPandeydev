@@ -18,8 +18,15 @@ jobs:
         with:
           github_user_name: RohanPandeydev
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/snake-personal.svg
+            dist/snake-personal-dark.svg?palette=github-dark
+
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: rohanpandey-gss
+          outputs: |
+            dist/snake-work.svg
+            dist/snake-work-dark.svg?palette=github-dark
 
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         with:

@@ -109,9 +109,19 @@
 
 ## 🐍 Contribution Snake
 
+### Personal — [@RohanPandeydev](https://github.com/RohanPandeydev)
+
 <div align="center">
 
-![Snake animation](https://raw.githubusercontent.com/RohanPandeydev/RohanPandeydev/output/github-contribution-grid-snake-dark.svg)
+![Snake animation - Personal](https://raw.githubusercontent.com/RohanPandeydev/RohanPandeydev/output/snake-personal-dark.svg)
+
+</div>
+
+### Work — [@rohanpandey-gss](https://github.com/rohanpandey-gss)
+
+<div align="center">
+
+![Snake animation - Work](https://raw.githubusercontent.com/RohanPandeydev/RohanPandeydev/output/snake-work-dark.svg)
 
 </div>
 
