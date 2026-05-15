@@ -4,7 +4,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00D9FF,100:7C3AED&height=180&section=header&text=Rohan%20Pandey&fontColor=ffffff&fontSize=60&fontAlignY=38&desc=Full-Stack%20%C2%B7%20Go%20%C2%B7%20AI%20Agents%20%C2%B7%203D%20Web&descAlignY=60&descSize=18&animation=fadeIn" width="100%" alt="header" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=2800&pause=900&color=00D9FF&center=true&vCenter=true&width=720&lines=Healthcare+RegTech+%E2%80%A2+FDA+%2F+MDR+%2F+EUDAMED;AI+Agents+with+LangGraph+%2B+GPT-4o;Go+%E2%80%A2+gRPC+%E2%80%A2+ClickHouse+%E2%80%A2+Snowflake;React+%2B+Three.js+%2B+R3F+for+creative+web;MERN+%E2%80%A2+Angular+%E2%80%A2+FastAPI+%E2%80%A2+Multi-tenant+SaaS" alt="Tagline" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=2800&pause=900&color=00D9FF&center=true&vCenter=true&width=720&lines=Full-Stack+Engineer+%E2%80%A2+Multi-tenant+SaaS;AI+Agents+with+LangGraph+%2B+GPT-4o;Go+%E2%80%A2+gRPC+%E2%80%A2+ClickHouse+%E2%80%A2+Snowflake;React+%2B+Three.js+%2B+R3F+for+creative+web;MERN+%E2%80%A2+Angular+%E2%80%A2+FastAPI+%E2%80%A2+Data+Platforms" alt="Tagline" />
 
 <br/>
 
@@ -28,7 +28,7 @@
       <br/>
       <a href="https://github.com/rohanpandey-gss"><b>@rohanpandey-gss</b></a>
       <br/>
-      <sub>Work · Grass Stone · RegTech & data platforms</sub>
+      <sub>Work · Grass Stone · backend & data platforms</sub>
     </td>
   </tr>
 </table>
@@ -43,10 +43,10 @@
 
 ## 👋 About Me
 
-I build **production systems at the intersection of regulated healthcare and modern web**. Day-to-day I architect multi-tenant SaaS platforms in Go, ship AI agents that classify millions of FDA adverse-event records, and prototype 3D / creative web experiences on the side. Two GitHub accounts ([@RohanPandeydev](https://github.com/RohanPandeydev), [@rohanpandey-gss](https://github.com/rohanpandey-gss)) — same dev.
+I build **production systems across the full stack** — from multi-tenant SaaS platforms in Go to AI agents over large analytical datasets to 3D / creative web experiences on the side. Two GitHub accounts ([@RohanPandeydev](https://github.com/RohanPandeydev), [@rohanpandey-gss](https://github.com/rohanpandey-gss)) — same dev.
 
-- 🏥 **Domain**: FDA / EUDAMED medical-device compliance, MDRs, recalls, adverse events
-- 🤖 **AI**: LangGraph + GPT-4o agents over Snowflake (23M+ rows)
+- 🏗 **Architecture**: Multi-tenant SaaS, microservices, gRPC + REST APIs
+- 🤖 **AI**: LangGraph + GPT-4o agentic pipelines over large-scale data warehouses
 - 🛠 **Stack**: Go · gRPC · ClickHouse · Elasticsearch · React · TypeScript · Python · FastAPI
 - 🎨 **Side**: Three.js · React Three Fiber · Rapier physics · GSAP
 - 📫 **Reach**: [rohan.kr.pandey2.0@gmail.com](mailto:rohan.kr.pandey2.0@gmail.com)
@@ -59,52 +59,52 @@ I build **production systems at the intersection of regulated healthcare and mod
 <tr>
 <td width="50%" valign="top">
 
-### 🏥 RP360 Platform *(Grass Stone)*
+### 🏗 Multi-Tenant SaaS Platform
 
-Multi-tenant SaaS for **medical-device risk intelligence**.
-Go backend (gRPC, ClickHouse, Elasticsearch), Angular admin, FastAPI services.
+Production-grade B2B platform with full **tenant isolation, plans, licensing**.
+Go backend (gRPC + REST), ClickHouse for analytics, Elasticsearch for search, Angular admin, FastAPI services.
 
-- **SuperAdmin Portal** — tenants, plans, licensing
-- **Procedural Risk Agent** — LangGraph + GPT-4o classifying MDRs into 37 procedure buckets across 23M+ Snowflake records
-- **Adverse Event & Recall Analytics** — gRPC + OpenFDA ingestion, interactive dashboards
+- **SuperAdmin portal** — tenants, users, plans, licensing, system ops
+- Multi-region deployments on AWS + Azure
+- Proto-first APIs with Buf code-gen
 
 </td>
 <td width="50%" valign="top">
 
-### 🤖 MDR Autopilot & Autodrafting
+### 🤖 AI Agent Pipelines
 
-Automates drafting of **FDA Form 3500A** Medical Device Reports.
-Python pipeline fills statutory sections from ICSR narratives; React + Vite reviewer UI.
+**LangGraph + GPT-4o** agentic systems over large-scale data warehouses.
+Classifies + enriches records by fuzzy-searching **23M+ rows in Snowflake**, exposed over both **FastAPI** (HTTP) and **gRPC**.
 
-- ICSR generator
-- PDF form filler (FDA 3500 Stat Sec Ext)
-- Drafting engine on React 19 + Vite 8
+- Multi-step reasoning graphs
+- Entity resolution + structured-output extraction
+- Tier-based classification (3 tiers, 37 categories)
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### 📊 FDA Data Dashboard
+### 📊 Analytics Dashboard
 
-Go backend over **OpenFDA**, ClickHouse + Elasticsearch.
-Surfaces device adverse events, recalls, Boston Scientific cohorts, US/Canada tables.
+**gRPC backend in Go** + **ClickHouse** + **Elasticsearch**.
+Interactive charts, KPI cards, tabular breakdowns over high-cardinality datasets.
 
-- Scraper layer, Postman API collections
-- Render.yaml deploy pipeline
+- Streaming aggregations
+- Postman API collections
+- Render.yaml CI/CD pipeline
 
 </td>
 <td width="50%" valign="top">
 
 ### 🧩 Data Extraction Pipelines
 
-**EUDAMED**, hospital CMS, k-number, universal pipelines.
-Python + JS scrapers feeding the analytics platforms.
+A family of Python + JS scrapers feeding downstream analytics.
 
-- `eudamed-data-extraction`
-- `hospital_us_cms_data`
-- `knumber-extraction-pipeline`
-- `universal-data-pipeline`
+- Universal data pipeline (reusable framework)
+- Domain-specific extractors
+- OCR + PDF redaction (FastAPI + S3)
+- Apache Arrow / Thrift transport
 
 </td>
 </tr>
@@ -119,7 +119,7 @@ Vite + TypeScript build; Vercel deployment.
 </td>
 <td width="50%" valign="top">
 
-### 🧰 Extensions & Tooling
+### 🧰 Extensions & Apps
 
 - **VS Code extension** — internal dev tooling
 - **Signwave** — browser extension (ASL/sign overlay)
