@@ -28,7 +28,7 @@
       <br/>
       <a href="https://github.com/rohanpandey-gss"><b>@rohanpandey-gss</b></a>
       <br/>
-      <sub>Work · Grass Stone · backend & data platforms</sub>
+      <sub>Work · Backend & data platforms</sub>
     </td>
   </tr>
 </table>
