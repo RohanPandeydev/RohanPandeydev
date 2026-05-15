@@ -36,4 +36,12 @@ jobs:
           git add combined-stats.svg combined-contributions.svg
           git diff --cached --quiet && exit 0
           git commit -m "Update combined SVGs - [Skip GitHub Action]"
-          git push
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push attempt $attempt failed, rebasing and retrying..."
+            git pull --rebase origin main || true
+          done
+          echo "All push attempts failed"
+          exit 1
