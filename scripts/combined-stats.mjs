@@ -23,6 +23,14 @@ async function fetchUserStats({ user, token }) {
           totalIssueContributions
           totalPullRequestReviewContributions
           restrictedContributionsCount
+          contributionCalendar {
+            weeks {
+              contributionDays {
+                date
+                contributionCount
+              }
+            }
+          }
         }
         repositoriesContributedTo(first: 1, contributionTypes: [COMMIT, PULL_REQUEST, ISSUE, REPOSITORY]) {
           totalCount
@@ -63,6 +71,8 @@ const totals = {
   followers: 0,
 };
 
+const calendarByDate = new Map();
+
 for (const a of accounts) {
   const u = await fetchUserStats(a);
   const c = u.contributionsCollection;
@@ -76,7 +86,18 @@ for (const a of accounts) {
   totals.ownedRepos += u.repositories.totalCount;
   totals.stars += u.repositories.nodes.reduce((s, r) => s + r.stargazerCount, 0);
   totals.followers += u.followers.totalCount;
-  console.log(`${u.login}:`, c);
+  for (const week of c.contributionCalendar.weeks) {
+    for (const day of week.contributionDays) {
+      calendarByDate.set(
+        day.date,
+        (calendarByDate.get(day.date) ?? 0) + day.contributionCount,
+      );
+    }
+  }
+  console.log(`${u.login}:`, {
+    totalCommits: c.totalCommitContributions,
+    private: c.restrictedContributionsCount,
+  });
 }
 
 const fmt = (n) => n.toLocaleString("en-US");
@@ -135,3 +156,108 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
 writeFileSync("combined-stats.svg", svg);
 console.log("\nTotals:", totals);
 console.log("\ncombined-stats.svg written");
+
+// ── Combined contribution heatmap ────────────────────────────────────
+const dates = [...calendarByDate.keys()].sort();
+const startDate = new Date(dates[0]);
+const endDate = new Date(dates[dates.length - 1]);
+
+const dayMs = 24 * 60 * 60 * 1000;
+const gridStart = new Date(startDate);
+gridStart.setDate(gridStart.getDate() - gridStart.getDay());
+const totalDays = Math.round((endDate - gridStart) / dayMs) + 1;
+const totalWeeks = Math.ceil(totalDays / 7);
+
+const cell = 12;
+const gap = 3;
+const leftPad = 36;
+const topPad = 60;
+const rightPad = 20;
+const bottomPad = 30;
+const gridW = totalWeeks * (cell + gap) - gap;
+const gridH = 7 * (cell + gap) - gap;
+const HW = leftPad + gridW + rightPad;
+const HH = topPad + gridH + bottomPad;
+
+const levelColor = (n) => {
+  if (n === 0) return "#161b22";
+  if (n < 4) return "#0e4429";
+  if (n < 10) return "#006d32";
+  if (n < 20) return "#26a641";
+  return "#39d353";
+};
+
+const cells = [];
+const monthLabels = new Map();
+for (let w = 0; w < totalWeeks; w++) {
+  for (let d = 0; d < 7; d++) {
+    const date = new Date(gridStart.getTime() + (w * 7 + d) * dayMs);
+    if (date < startDate || date > endDate) continue;
+    const iso = date.toISOString().slice(0, 10);
+    const count = calendarByDate.get(iso) ?? 0;
+    const x = leftPad + w * (cell + gap);
+    const y = topPad + d * (cell + gap);
+    cells.push(
+      `<rect x="${x}" y="${y}" width="${cell}" height="${cell}" rx="2" fill="${levelColor(count)}"><title>${iso}: ${count} contributions</title></rect>`,
+    );
+    if (date.getDate() <= 7 && d === 0) {
+      monthLabels.set(
+        x,
+        date.toLocaleString("en-US", { month: "short", timeZone: "UTC" }),
+      );
+    }
+  }
+}
+
+const monthLabelsSvg = [...monthLabels.entries()]
+  .map(
+    ([x, m]) =>
+      `<text x="${x}" y="${topPad - 8}" class="month">${m}</text>`,
+  )
+  .join("");
+
+const dayLabelsSvg = ["Mon", "Wed", "Fri"]
+  .map((label, i) => {
+    const y = topPad + (i * 2 + 1) * (cell + gap) + cell - 2;
+    return `<text x="${leftPad - 8}" y="${y}" text-anchor="end" class="day">${label}</text>`;
+  })
+  .join("");
+
+const totalCombinedDays = [...calendarByDate.values()].reduce(
+  (s, v) => s + v,
+  0,
+);
+
+const heatmapSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="${HW}" height="${HH}" viewBox="0 0 ${HW} ${HH}" role="img">
+  <title>Combined contribution heatmap — RohanPandeydev + rohanpandey-gss</title>
+  <style>
+    .bg { fill: #0d1117; }
+    .border { stroke: #21262d; stroke-width: 1; fill: none; }
+    .title { fill: #c9d1d9; font: 600 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .subtitle { fill: #8b949e; font: 400 11px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .month { fill: #8b949e; font: 400 10px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .day { fill: #8b949e; font: 400 9px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .legend { fill: #8b949e; font: 400 10px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  </style>
+  <rect class="bg" x="0.5" y="0.5" width="${HW - 1}" height="${HH - 1}" rx="6"/>
+  <rect class="border" x="0.5" y="0.5" width="${HW - 1}" height="${HH - 1}" rx="6"/>
+  <text x="${leftPad}" y="24" class="title">${totalCombinedDays.toLocaleString("en-US")} contributions in the last year</text>
+  <text x="${leftPad}" y="42" class="subtitle">Combined activity from @RohanPandeydev + @rohanpandey-gss</text>
+  ${monthLabelsSvg}
+  ${dayLabelsSvg}
+  ${cells.join("\n")}
+  <g transform="translate(${HW - rightPad - 130},${HH - 12})">
+    <text x="0" y="0" class="legend">Less</text>
+    <rect x="28" y="-10" width="${cell}" height="${cell}" rx="2" fill="${levelColor(0)}"/>
+    <rect x="${28 + (cell + gap) * 1}" y="-10" width="${cell}" height="${cell}" rx="2" fill="${levelColor(2)}"/>
+    <rect x="${28 + (cell + gap) * 2}" y="-10" width="${cell}" height="${cell}" rx="2" fill="${levelColor(5)}"/>
+    <rect x="${28 + (cell + gap) * 3}" y="-10" width="${cell}" height="${cell}" rx="2" fill="${levelColor(15)}"/>
+    <rect x="${28 + (cell + gap) * 4}" y="-10" width="${cell}" height="${cell}" rx="2" fill="${levelColor(25)}"/>
+    <text x="${28 + (cell + gap) * 5 + 6}" y="0" class="legend">More</text>
+  </g>
+</svg>`;
+
+writeFileSync("combined-contributions.svg", heatmapSvg);
+console.log(
+  `combined-contributions.svg written (${totalCombinedDays} total contributions)`,
+);

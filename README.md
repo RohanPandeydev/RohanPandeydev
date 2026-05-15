@@ -98,7 +98,15 @@
 
 ---
 
-## 🐍 Contribution Snake
+## 🟩 Combined Contribution Activity
+
+<div align="center">
+
+![Combined contribution heatmap](./combined-contributions.svg)
+
+</div>
+
+### 🐍 Snake (Personal Account)
 
 <div align="center">
 
