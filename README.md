@@ -232,7 +232,7 @@ Vite + TypeScript build; Vercel deployment.
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rohankumar-mern/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rohankumar-dev/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rohan.kr.pandey2.0@gmail.com)
 [![Personal GitHub](https://img.shields.io/badge/@RohanPandeydev-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RohanPandeydev)
 [![Work GitHub](https://img.shields.io/badge/@rohanpandey--gss-2EA44F?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rohanpandey-gss)
